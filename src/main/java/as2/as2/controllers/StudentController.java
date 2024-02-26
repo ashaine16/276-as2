@@ -88,7 +88,7 @@ public class StudentController {
         }
     }
 
-    @GetMapping("students/deleteList")
+    @GetMapping("/students/deleteList")
     public String showDeleteForm(Model model) {
         List<Student> students = studentRepo.findAll();
         model.addAttribute("students", students);
