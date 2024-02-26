@@ -92,7 +92,7 @@ public class StudentController {
     public String showDeleteForm(Model model) {
         List<Student> students = studentRepo.findAll();
         model.addAttribute("students", students);
-        return "/students/deleteList";
+        return "students/deleteList";
     }
 
     //post mapping delete based on name and age
