@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>View Students</title>
+    <link rel="stylesheet" href="/css/viewStudents.css" type="text/css"/>
+</head>
+<body>
+    <div class="header text-center">
+        <a href="/main.html" class="btn-home">&larr; Home</a>
+        <h1>Student Database</h1>
+    </div>
+    <div class="container">
+        <div th:if="${students.empty}">
+            <p class="text-center">No students to display.</p>
+        </div>
+        <div th:unless="${students.empty}" class="student-list">
+            <div th:each="student : ${students}" class="student-card"
+                 th:style="'border-color:' + ${student.hairColor} + '; width:' + ${student.weight} + 'px; height:' + (${student.height} * 3) + 'px;'">
+                <div class="student-name" th:text="${student.name}">Student Name</div>
+                <div class="student-attribute">
+                    <span>Weight:</span>
+                    <span th:text="${student.weight}">Weight</span>
+                </div>
+                <div class="student-attribute">
+                    <span>Height:</span>
+                    <span th:text="${student.height}">Height</span>
+                </div>
+                <div class="student-attribute">
+                    <span>Hair Color:</span>
+                    <span th:text="${student.hairColor}">Hair Color</span>
+                </div>
+                <div class="student-attribute">
+                    <span>GPA:</span>
+                    <span th:text="${student.gpa}">GPA</span>
+                </div>
+                <div class="student-attribute">
+                    <span>Program:</span>
+                    <span th:text="${student.program}">Program</span>
+                </div>
+                <div class="student-attribute">
+                    <span>Age:</span>
+                    <span th:text="${student.age}">Age</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

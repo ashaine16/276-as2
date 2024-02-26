@@ -1,0 +1,91 @@
+/* editList.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #BEC5AD;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.back-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #34252F;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 16px;
+}
+
+h1 {
+    margin-top: 20px;
+}
+
+.validate-form {
+    margin-bottom: 20px;
+}
+
+.validate-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.validate-form input {
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+}
+
+.validate-form .btn-send {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #34252F;
+    color: white;
+    cursor: pointer;
+}
+
+.student-list {
+    width: 100%;
+    max-width: 600px;
+}
+
+.student-list ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.student-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.student-name,
+.student-weight,
+.student-height,
+.student-hairColor,
+.student-gpa,
+.student-age {
+    margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+    .validate-form form {
+        width: 90%;
+    }
+
+    .student-list {
+        width: 90%;
+    }
+}
