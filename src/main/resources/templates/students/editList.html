@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Student</title>
+    <link href="/css/editList.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+    <a href="/main.html" class="back-btn">&larr; Back to Home</a>
+    <h1>Enter Name & Age of Student to Edit</h1>
+    <div class="validate-form">
+        <form action="/students/edit" method="post">
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="number" name="age" placeholder="Age" required>
+            <button type="submit" class="btn-send">SEND</button>
+        </form>
+    </div>
+    <div th:if="${students.empty}">
+        <p>No students to display.</p>
+    </div>
+    <div th:unless="${students.empty}" class="student-list">
+        <ul>
+            <li th:each="student: ${students}" class="student-item">
+                <span class="student-name" th:text="${student.name}"></span>,
+                <span class="student-weight" th:text="'Weight: ' +${student.weight}"></span>,
+                <span class="student-height" th:text="'Height: ' +${student.height}"></span>,
+                <span class="student-hairColor" th:text="'Hair Color: ' + ${student.hairColor}"></span>,
+                <span class="student-gpa" th:text="'GPA: ' + ${student.gpa}"></span>,
+                <span class="student-program" th:text="'Program: ' + ${student.program}"></span>,
+                <span class="student-age" th:text="'Age: ' + ${student.age}"></span>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
